@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>检测报告验证</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                   "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(160deg, #dce8f5 0%, #c8d8ec 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0 60px;
+    }
+
+    /* ── 顶部导航栏 ── */
+    .nav-bar {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 20px 10px;
+      position: relative;
+    }
+    .nav-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-align: center;
+    }
+    .nav-subtitle {
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .nav-close {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
+      color: #555;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* ── 主卡片 ── */
+    .card {
+      width: calc(100% - 28px);
+      max-width: 460px;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      margin-top: 12px;
+    }
+
+    /* ── 渐变标题带 ── */
+    .card-header {
+      background: linear-gradient(135deg, #4a90d9 0%, #6c4fd0 100%);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .card-header h1 {
+      color: #fff;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── 验证结果区块 ── */
+    .result-section {
+      padding: 28px 24px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .bracket {
+      flex-shrink: 0;
+      width: 8px;
+      height: 80px;
+      border: 3px solid #2db55d;
+      border-right: none;
+      border-radius: 6px 0 0 6px;
+    }
+    .result-content {
+      flex: 1;
+    }
+    .result-label {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 12px;
+    }
+    .result-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #2db55d, #22a350);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 8px 22px;
+      border-radius: 50px;
+      box-shadow: 0 3px 10px rgba(34,163,80,0.35);
+    }
+    .result-badge .check {
+      font-size: 14px;
+    }
+
+    /* ── 分割线 ── */
+    .divider {
+      height: 1px;
+      background: #f0f0f0;
+      margin: 0 24px;
+    }
+
+    /* ── 信息列表 ── */
+    .info-list {
+      padding: 8px 24px 28px;
+    }
+    .info-row {
+      display: flex;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px solid #f3f3f3;
+      gap: 12px;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-key {
+      flex-shrink: 0;
+      width: 80px;
+      font-size: 14px;
+      color: #888;
+      white-space: nowrap;
+    }
+    .info-val {
+      font-size: 15px;
+      color: #1a1a1a;
+      font-weight: 500;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <div class="nav-bar">
+    <span class="nav-close">✕</span>
+    <div>
+      <div class="nav-title">检测报告验证</div>
+      <div class="nav-subtitle">report-verify.local</div>
+    </div>
+  </div>
+
+  <!-- 主卡片 -->
+  <div class="card">
+
+    <!-- 渐变标题 -->
+    <div class="card-header">
+      <h1>创标检测报告真伪查询验证</h1>
+    </div>
+
+    <!-- 验证结果 -->
+    <div class="result-section">
+      <div class="bracket"></div>
+      <div class="result-content">
+        <div class="result-label">报告查询结果：</div>
+        <div class="result-badge">
+          <span class="check">✓</span> 报告有效
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 报告详情 -->
+    <div class="info-list">
+      <div class="info-row">
+        <span class="info-key">报告编号：</span>
+        <span class="info-val">WJIST20250620040DDX</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">报告语言：</span>
+        <span class="info-val">中文</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">委托单位：</span>
+        <span class="info-val">大地熊（苏州）磁铁有限公司</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">报告时间：</span>
+        <span class="info-val">2025/06/24</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
